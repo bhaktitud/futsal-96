@@ -3,9 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FUTSAL 96</title>
+    
+    <%- include('partials/bootstrap-css') %>
+
+    <title>Futsal 96</title>
 </head>
 <body>
+    <%- include('partials/top-navbar') %>
     
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Selamat Datang</h1>
+            <p class="lead"></p>
+        </div>
+    </div>
+    <div>
+        <button style="width: 100px;" class="button" type="button" onclick="window.location.href='/users/register/';">Register</button>
+        <% if (isLogin) { %>
+            <button style="width: 100px;" class="button" type="button" onclick="window.location.href='/users/logout/';">Logout</button>   
+        <% } else { %>
+            <button style="width: 100px;" class="button" type="button" onclick="window.location.href='/users/login/';">Login</button>
+        <% } %>
+    </div>
+
+    <%- include('partials/bootstrap-js') %>
 </body>
 </html>

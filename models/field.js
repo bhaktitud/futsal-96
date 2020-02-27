@@ -1,16 +1,18 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   class Field extends sequelize.Sequelize.Model{}
-  Field.init({
+  Field.init ({
     name: DataTypes.STRING,
     type: DataTypes.STRING,
-    price: DataTypes.STRING,
-    facility: DataTypes.STRING
-  },{
-    sequelize
-  })
+    facility: DataTypes.STRING,
+    price: DataTypes.INTEGER
+  }, {
+    sequelize ,
+    modelName : 'Field'
+  });
+
   Field.associate = function(models) {
-    // associations can be defined here
+    Field.hasMany (models.UserField);
   };
   return Field;
 };

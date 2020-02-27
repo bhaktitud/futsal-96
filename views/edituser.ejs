@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/login.css">
+    <title>Edit info form</title>
+</head>
+<body>
+
+    <%- include('partials/top-navbar') %>
+    <h1>Edit info form</h1>
+    <br>
+    <% if (errors)  { %>
+        <% for (let i = 0 ; i < errors.length ; i++) { %> 
+        <div class="alert alert-danger" role="alert" style="text-align: center;">
+            <%= errors[i].message %>
+        </div>
+    <% }
+    } %> 
+    <br>
+    <form action="/users/edit/<%= editUser.id %>" method="POST">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" value=<%= editUser.username %>><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" value=<%= editUser.password %>><br>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" value=<%= editUser.name %>><br>
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email" value=<%= editUser.email %>><br>
+        <label for="phone_number">Phone</label><br>
+        <input type="text" id="phone_number" name="phone_number" value=<%= editUser.phone_number %>><br>
+        <input type="submit" value="Save">
+        <button class="button" type="button" onclick="window.location.href='/users';">Cancel</button>
+    </form>
+    <%- include('partials/bootstrap-js') %>    
+</body>
+</html>

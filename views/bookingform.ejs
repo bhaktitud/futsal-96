@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking form</title>
+</head>
+<body>
+
+    <%- include('partials/top-navbar') %>
+    <h1>Booking form</h1>
+    <br>
+    <br>
+    <form action="/booking/add" method="POST">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email"><br>
+        <label for="phone_number">Phone</label><br>
+        <input type="text" id="phone_number" name="phone_number"><br>
+        <input type="submit" value="Submit">
+        <button class="button" type="button" onclick="window.location.href='/';">Cancel</button>
+    </form>
+</body>
+</html>

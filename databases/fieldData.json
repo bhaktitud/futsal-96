@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Meta Field",
+        "type": "indoor",
+        "price": 150000,
+        "facility": "Synthetic Grass"
+    },
+    {
+        "name": "Alpha Field",
+        "type": "outdoor",
+        "price": 140000,
+        "facility": "Synthetic Grass"
+    },
+    {
+        "name": "Omega Field",
+        "type": "indoor",
+        "price": 150000,
+        "facility": "Synthetic Grass"
+    },
+    {
+        "name": "Charlie Field",
+        "type": "indoor",
+        "price": 120000,
+        "facility": "Rubber Grass"
+    }
+]

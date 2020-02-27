@@ -1,26 +1,20 @@
 {
-  "name": "futsal-96",
+  "name": "futsal-20200206",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "npm init npm i express ejs pg sequelize express-session sequelize init sequelize db:create sequelize db:migrate sequelize db:seed:all",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bhaktitud/futsal-96.git"
-  },
-  "keywords": [],
-  "author": "bhakti-ryanadhi",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/bhaktitud/futsal-96/issues"
-  },
-  "homepage": "https://github.com/bhaktitud/futsal-96#readme",
   "dependencies": {
     "ejs": "^3.0.1",
     "express": "^4.17.1",
+    "express-session": "^1.17.0",
     "pg": "^7.18.2",
     "sequelize": "^5.21.5"
-  }
+  },
+  "devDependencies": {},
+  "keywords": []
 }

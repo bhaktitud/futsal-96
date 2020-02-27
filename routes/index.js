@@ -3,8 +3,15 @@ const customerRouters = require('./customerRoutes')
 
 
 
-router.use(customerRouters)
-router.use(customerRouters)
+router.get('/', (req, res)=>{
+    res.render('home')
+})
+router.get('/register', (req, res)=> {
+    res.render('register')
+})
+
+// router.get('/user/dashboard/')
+// router.get('/booking')
 
 
 module.exports = router

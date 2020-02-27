@@ -1,14 +1,21 @@
-const routes = require('./routes/index')
-const express = require('express')
-const app = express()
-const PORT = 3000; 
+const express = require ('express') ;
+const app = express() ;
+const session = require('express-session')
+const PORT = 3000 ;
+const routers = require ('./routers/index.js')
 
-app.set('view engine', 'ejs')
-app.use(express.urlencoded({ extended : true }))
-app.use(express.static(__dirname + '/public'))
-app.use(routes)
+app.set ('view engine' , 'ejs');
+app.use(express.urlencoded({ extended: true })) ;
+app.use(express.static(__dirname + '/public')) ;
 
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true
+}))
 
-app.listen(PORT, () => {
-    console.log(`app listen to : ${PORT}`);
+app.use ( routers );
+
+app.listen (PORT, ()=> {
+    console.log(`listening on port : ${PORT}`);
 })
