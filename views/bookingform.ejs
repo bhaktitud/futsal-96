@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking form</title>
+</head>
+<body>
+    <h1>Booking form</h1>
+    <br>
+    <% if (errors)  { %>
+        <% for (let i = 0 ; i < errors.length ; i++) { %> 
+        <div class="alert alert-danger" role="alert" style="text-align: center;">
+            <%= errors[i].message %>
+        </div>
+    <% }
+    } %> 
+    <br>
+    <form action="/reservations/add" method="POST">
+        <label for="dateBooked">Date:</label><br>
+        <input type="date" id="dateBooked" name="dateBooked"><br><br>
+        <label for="FieldId">Choose field:</label><br>
+        <select id="FieldId" name="FieldId">
+          <option value="1">Meta Field</option>
+          <option value="2">Alpha Field</option>
+          <option value="3">Omega Field</option>
+          <option value="4">Charlie Field</option>
+        </select> <br><br>
+        <input type="submit" value="Next">
+    </form>
+</body>
+</html>

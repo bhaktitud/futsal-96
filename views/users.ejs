@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+</head>
+<body>
+    <h1>Users</h1>
+    <br>
+    <button style="width: 100px;" class="button" type="button" onclick="window.location.href='/users/add/';">Add User</button>
+    <table id="data">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (let i = 0 ; i < users.length ; i++) { %>
+                <tr>
+                    <td><%= users[i].username %></td>
+                    <td><%= users[i].password %></td>
+                    <td><%= users[i].name %></td>
+                    <td><%= users[i].email %></td>
+                    <td><%= users[i].phone %></td>
+                    <td> <button class="button" type="button" onclick="window.location.href='/users/edit/<%=users[i].id%>'">Edit</button> 
+                    <button class="button" type="button" onclick="deleteConfirm(<%= users[i].id %>)">Delete</button></td>
+                </tr>
+            <% } %> 
+        </tbody>
+    </table> 
+    <script>        
+        function deleteConfirm(id) {
+            let areYouSure = window.confirm("Are you sure?");
+            console.log(areYouSure);
+            if (areYouSure) {
+                window.open(`/users/delete/${id}`,"_self")
+            } else {
+                window.open('/users',"_self")
+            }
+        }
+    </script>
+</body>
+</html>
